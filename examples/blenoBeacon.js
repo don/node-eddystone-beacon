@@ -1,3 +1,5 @@
+// Manually create a URI Beacon with bleno
+
 var bleno = require('bleno');
 
 var scanData = new Buffer(0); // maximum 31 bytes
