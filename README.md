@@ -1,4 +1,4 @@
-URI Beacon with NodeJS for [Physical Web](http://google.github.io/physical-web/)
+Bluetooth URI Beacon for [Physical Web](http://google.github.io/physical-web/)
 
 Requires NodeJS and Linux
 

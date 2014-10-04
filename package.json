@@ -1,19 +1,24 @@
 {
-  "name": "UriBeacon",
-  "version": "0.1.0",
+  "name": "uri-beacon",
+  "version": "0.1.1",
   "description": "Bluetooth URI Beacon",
+  "os": [
+    "linux"
+  ],
   "keywords": [
     "bluetooth",
-     "BLE",
-     "Physical Web"
+    "bluetooth low energy",
+    "BLE",
+    "Physical Web"
   ],
   "repository": {
     "type": "git",
-     "url": "https://github.com/don/UriBeacon.org"
+     "url": "https://github.com/don/node-uri-beacon.git"
   },
   "main": "uriBeacon.js",
   "scripts": {
-    "test": "mocha test/*.js"
+    "pretest": "jshint *.js lib/. test/. examples/.",
+     "test": "mocha -R spec test/*.js"
   },
   "author": "Don Coleman <don.coleman@gmail.com>",
   "license": "Apache Version 2.0",
@@ -21,6 +26,7 @@
     "bleno": "~0.1.8"
   },
   "devDependencies": {
+      "jshint": "~2.5.6",
       "mocha": "~1.21.4"
   }
 }
