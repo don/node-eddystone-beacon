@@ -24,4 +24,4 @@ See the examples
 
 This only runs on Linux. You need to run as sudo. See [bleno](https://github.com/sandeepmistry/bleno#running-on-linux) for more info.
 
-Have an older machine or Raspberry P? Add a [Bluetooth 4.0 USB Adapter](http://www.adafruit.com/products/1327).
+Have an older machine or Raspberry Pi? Add a [Bluetooth 4.0 USB Adapter](http://www.adafruit.com/products/1327).
