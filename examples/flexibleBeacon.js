@@ -1,7 +1,7 @@
 // use this library to encode the URI
 // manually create the advertising data
 
-var uriBeacon = require('./../uriBeacon'),
+var uriBeacon = require('./../uri-beacon'),
     bleno = require('bleno');
 
 var template = new Buffer(10); // maximum 31 bytes

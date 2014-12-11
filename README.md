@@ -13,7 +13,7 @@ Run tests
 Create a beacon
 
     $ sudo node
-    > uriBeacon = require ('./uriBeacon')
+    > uriBeacon = require ('./uri-beacon')
     > uriBeacon.advertise('http://example.com')
 
 See the examples

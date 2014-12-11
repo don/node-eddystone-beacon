@@ -1,5 +1,5 @@
 var assert = require("assert");
-var uriBeacon = require("./../uriBeacon");
+var uriBeacon = require("./../uri-beacon");
 
 describe('Advertisement Buffer', function () {
 
