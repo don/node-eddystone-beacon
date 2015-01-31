@@ -15,7 +15,7 @@
     "type": "git",
      "url": "https://github.com/don/node-uri-beacon.git"
   },
-  "main": "uriBeacon.js",
+  "main": "uri-beacon.js",
   "scripts": {
     "pretest": "jshint *.js lib/. test/. examples/.",
      "test": "mocha -R spec test/*.js"
