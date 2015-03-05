@@ -16,9 +16,16 @@ Create a beacon
     > uriBeacon = require ('./uri-beacon')
     > uriBeacon.advertise('http://example.com')
 
+Create a beacon and specify the txPowerLevel in dBm
+
+    $ sudo node
+    > uriBeacon = require ('./uri-beacon')
+    > uriBeacon.advertise('http://example.com', { txPowerLevel: -22 })
+
 See the examples
 
  * [simpleBeacon](examples/simpleBeacon.js) - easiest way to create a URI Beacon
+ * [powerLevel](examples/powerLevel.js) - create a URI Beacon specifying txPowerLevel
  * [blenoBeacon](examples/blenoBeacon.js) - manually create a URI Beacon using [bleno](https://github.com/sandeepmistry/bleno)
  * [flexibleBeacon](examples/flexibleBeacon.js) - use library to encode URI, manually handle advertising data
 
