@@ -1,4 +1,5 @@
 // Manually create a URI Beacon with bleno
+var os = require('os');
 
 var bleno = require('bleno');
 
@@ -21,4 +22,16 @@ advertisementData[12] = 0x62; // b
 advertisementData[13] = 0x63; // c
 advertisementData[14] = 0x07; // .com
 
-bleno.startAdvertisingWithEIRData(advertisementData, scanData);
+bleno.on('stateChange', function(state) {
+    if (state === 'poweredOn') {
+        var platform = os.platform();
+
+        if (platform === 'linux') {
+            bleno.startAdvertisingWithEIRData(advertisementData, scanData);
+        } else if (platform === 'darwin' && bleno.startAdvertisingWithEIRData) {
+            bleno.startAdvertisingWithEIRData(advertisementData);
+        } else {
+            throw new Error('Your platform is not supported!');
+        }
+    }
+});
