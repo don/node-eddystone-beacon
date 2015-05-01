@@ -2,7 +2,6 @@
 // manually create the advertising data
 
 var uriBeacon = require('./../uri-beacon'),
-    os = require('os'),
     bleno = require('bleno');
 
 var template = new Buffer(10); // maximum 31 bytes
@@ -17,18 +16,13 @@ template[7] = 0xFE; // URI Beacon ID
 template[8] = 0x00; // Flags
 template[9] = 0xEC; // Power -20 dBm
 
-var scanData = new Buffer(0); // maximum 31 bytes
 var encoded = uriBeacon.encode("http://example.com");
 var advertisementData = Buffer.concat([template, encoded], template.length + encoded.length);
 advertisementData[4] = encoded.length + 5;
 
 bleno.on('stateChange', function(state) {
     if (state === 'poweredOn') {
-        var platform = os.platform();
-
-        if (platform === 'linux') {
-            bleno.startAdvertisingWithEIRData(advertisementData, scanData);
-        } else if (platform === 'darwin' && bleno.startAdvertisingWithEIRData) {
+        if (bleno.startAdvertisingWithEIRData) {
             bleno.startAdvertisingWithEIRData(advertisementData);
         } else {
             throw new Error('Your platform is not supported!');
