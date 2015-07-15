@@ -1,7 +1,7 @@
 {
-  "name": "uri-beacon",
-  "version": "0.2.3",
-  "description": "Bluetooth URI Beacon",
+  "name": "eddystone-beacon",
+  "version": "0.1.0",
+  "description": "Bluetooth LE Eddystone Beacon",
   "os": [
     "darwin",
     "linux"
@@ -10,13 +10,15 @@
     "bluetooth",
     "bluetooth low energy",
     "BLE",
-    "Physical Web"
+    "Physical Web",
+    "Eddystone",
+    "beacon"
   ],
   "repository": {
     "type": "git",
      "url": "https://github.com/don/node-uri-beacon.git"
   },
-  "main": "uri-beacon.js",
+  "main": "eddystone-beacon.js",
   "scripts": {
     "pretest": "jshint *.js lib/. test/. examples/.",
      "test": "mocha -R spec test/*.js"
