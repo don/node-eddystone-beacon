@@ -1,34 +1,65 @@
-Bluetooth URI Beacon for [Physical Web](http://google.github.io/physical-web/)
+# node-eddystone-beacon
 
-Requires Node.js and Linux or OS X 10.10 or above.
+Create an [Eddystone](https://github.com/google/eddystone) Beacon using Node.js
 
-Install the dependencies
+[Eddystone-URL](https://github.com/google/eddystone/tree/master/eddystone-url) beacons can be used with the [Physical Web](http://google.github.io/physical-web/).
 
-    npm install
+## Prerequisites
 
-Run tests
+Requires Node.js and Linux or OS X 10.10 or above with Bluetooth 4.0 hardware.
 
-    npm test
-
-Create a beacon
-
-    $ sudo node
-    > uriBeacon = require ('./uri-beacon')
-    > uriBeacon.advertise('http://example.com')
-
-Create a beacon and specify the txPowerLevel in dBm
-
-    $ sudo node
-    > uriBeacon = require ('./uri-beacon')
-    > uriBeacon.advertise('http://example.com', { txPowerLevel: -22 })
-
-See the examples
-
- * [simpleBeacon](examples/simpleBeacon.js) - easiest way to create a URI Beacon
- * [powerLevel](examples/powerLevel.js) - create a URI Beacon specifying txPowerLevel
- * [blenoBeacon](examples/blenoBeacon.js) - manually create a URI Beacon using [bleno](https://github.com/sandeepmistry/bleno)
- * [flexibleBeacon](examples/flexibleBeacon.js) - use library to encode URI, manually handle advertising data
-
-On Linux, you __need__ to run as ```sudo```. See [bleno](https://github.com/sandeepmistry/bleno#running-on-linux) for more info.
+On Linux, you __need__ to run with ```sudo``` or as ```root```. See [bleno](https://github.com/sandeepmistry/bleno#running-on-linux) for more info.
 
 Have an older machine or Raspberry Pi? Add a [Bluetooth 4.0 USB Adapter](http://www.adafruit.com/products/1327).
+
+## Install
+
+```sh
+npm install eddystone-beacon
+```
+
+## Usage
+
+```javascript
+var EddystoneBeacon = require('eddystone-beacon');
+```
+
+### [Eddystone-URL](https://github.com/google/eddystone/tree/master/eddystone-url)
+
+#### Advertise URL with default TX power level (-21 dBm)
+
+```javascript
+EddystoneBeacon.advertiseUrl('http://example.com');
+```
+
+#### Advertise URL with custom TX power level
+
+```javascript
+EddystoneBeacon.advertiseUrl('http://example.com', { txPowerLevel: -22 });
+```
+
+### Examples
+
+ * [Eddystone-URL](https://github.com/google/eddystone/tree/master/eddystone-url)
+   * [simpleBeacon](examples/url/simpleBeacon.js) - easiest way to create a Eddystone-URL Beacon
+   * [powerLevel](examples/url/powerLevel.js) - create a Eddystone-URL Beacon specifying txPowerLevel
+   * [blenoBeacon](examples/url/blenoBeacon.js) - manually create a Eddystone-URL Beacon using [bleno](https://github.com/sandeepmistry/bleno)
+   * [flexibleBeacon](examples/url/flexibleBeacon.js) - use library to encode URL, manually handle advertising data
+
+## Development
+
+### Install the dependencies
+
+```sh
+npm install
+```
+
+### Run tests
+
+```sh
+npm test
+```
+
+## TODO
+
+ * Support for [Eddystone-UID](https://github.com/google/eddystone/tree/master/eddystone-uid) and [Eddystone-TLM](https://github.com/google/eddystone/tree/master/eddystone-tlm) beacons
