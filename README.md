@@ -1,12 +1,14 @@
-# Create an [Eddystone](https://github.com/google/eddystone) Beacon using Node.js
+# node-eddystone-beacon
 
-Eddystone-URL beacons can be used with the [Physical Web](http://google.github.io/physical-web/).
+Create an [Eddystone](https://github.com/google/eddystone) Beacon using Node.js
+
+[Eddystone-URL](https://github.com/google/eddystone/tree/master/eddystone-url) beacons can be used with the [Physical Web](http://google.github.io/physical-web/).
 
 ## Prerequisites
 
 Requires Node.js and Linux or OS X 10.10 or above with Bluetooth 4.0 hardware.
 
-On Linux, you __need__ to run as ```sudo```. See [bleno](https://github.com/sandeepmistry/bleno#running-on-linux) for more info.
+On Linux, you __need__ to run with ```sudo``` or as ```root```. See [bleno](https://github.com/sandeepmistry/bleno#running-on-linux) for more info.
 
 Have an older machine or Raspberry Pi? Add a [Bluetooth 4.0 USB Adapter](http://www.adafruit.com/products/1327).
 
@@ -24,21 +26,21 @@ var EddystoneBeacon = require('eddystone-beacon');
 
 ### [Eddystone-URL](https://github.com/google/eddystone/tree/master/eddystone-url)
 
-Advertise URL with default TX power level (-21 dBm)
+#### Advertise URL with default TX power level (-21 dBm)
 
 ```javascript
-EddystoneBeacon.advertise('http://example.com');
+EddystoneBeacon.advertiseUrl('http://example.com');
 ```
 
-Advertise URL with custom TX power level
+#### Advertise URL with custom TX power level
 
 ```javascript
-EddystoneBeacon.advertise('http://example.com', { txPowerLevel: -22 });
+EddystoneBeacon.advertiseUrl('http://example.com', { txPowerLevel: -22 });
 ```
 
 ### Examples
 
- * URL
+ * [Eddystone-URL](https://github.com/google/eddystone/tree/master/eddystone-url)
    * [simpleBeacon](examples/url/simpleBeacon.js) - easiest way to create a Eddystone-URL Beacon
    * [powerLevel](examples/url/powerLevel.js) - create a Eddystone-URL Beacon specifying txPowerLevel
    * [blenoBeacon](examples/url/blenoBeacon.js) - manually create a Eddystone-URL Beacon using [bleno](https://github.com/sandeepmistry/bleno)
