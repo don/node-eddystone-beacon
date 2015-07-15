@@ -22,6 +22,16 @@
      "test": "mocha -R spec test/*.js"
   },
   "author": "Don Coleman <don.coleman@gmail.com>",
+  "maintainers": [
+    {
+      "name": "Don Coleman",
+      "email": "don.coleman@gmail.com"
+    },
+    {
+      "name": "Sandeep Mistry",
+      "email": "sandeep.mistry@gmail.com"
+    }
+  ],
   "license": "Apache Version 2.0",
   "dependencies": {
     "bleno": "~0.1.13",
