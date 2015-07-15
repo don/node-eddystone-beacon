@@ -1,3 +1,9 @@
+## uri-beacon is deprecated, use eddystone-beacon as a replacement
+
+[eddystone-beacon NPM](https://www.npmjs.com/package/eddystone-beacon)
+
+[eddystone-beacon Github](https://github.com/don/node-eddystone-beacon)
+
 Bluetooth URI Beacon for [Physical Web](http://google.github.io/physical-web/)
 
 Requires NodeJS and Linux
