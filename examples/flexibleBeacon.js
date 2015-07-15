@@ -1,4 +1,4 @@
-// use this library to encode the URI
+// use this library to encode the URL
 // manually create the advertising data
 
 var EddystoneBeacon = require('./../eddystone-beacon'),
@@ -16,7 +16,7 @@ template[7] = 0xFE; // Eddystone Beacon ID
 template[8] = 0x10; // Flags
 template[9] = 0xEC; // Power -20 dBm
 
-var encoded = EddystoneBeacon.encode("http://example.com");
+var encoded = EddystoneBeacon.encodeUrl("http://example.com");
 var advertisementData = Buffer.concat([template, encoded], template.length + encoded.length);
 advertisementData[4] = encoded.length + 5;
 

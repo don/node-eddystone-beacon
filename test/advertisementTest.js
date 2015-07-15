@@ -31,7 +31,7 @@ describe('Advertisement Buffer', function () {
         knownData.write("abc", 14);
         knownData.writeUInt8(0x07, 17); // .com
 
-        var advertisementData = EddystoneBeacon.makeBuffer("http://www.abc.com");
+        var advertisementData = EddystoneBeacon.makeUrlBuffer("http://www.abc.com");
         assert.deepEqual(knownData, advertisementData);
     });
 
@@ -61,32 +61,32 @@ describe('Advertisement Buffer', function () {
         knownData.write("eff", 14);
         knownData.writeUInt8(0x08, 17); // .org
 
-        var advertisementData = EddystoneBeacon.makeBuffer("http://www.eff.org", -100);
+        var advertisementData = EddystoneBeacon.makeUrlBuffer("http://www.eff.org", -100);
         assert.deepEqual(knownData, advertisementData);
     });
 
     it('should handle missing tx power level', function () {
-        var advertisementData = EddystoneBeacon.makeBuffer("http://www.eff.org");
+        var advertisementData = EddystoneBeacon.makeUrlBuffer("http://www.eff.org");
         assert.deepEqual(defaultTxPowerLevel, advertisementData[txPowerLevelOffset]);
     });
 
     it('should handle negative tx power level', function () {
-        var advertisementData = EddystoneBeacon.makeBuffer("http://www.eff.org", -18);
+        var advertisementData = EddystoneBeacon.makeUrlBuffer("http://www.eff.org", -18);
         assert.deepEqual(0xEE, advertisementData[txPowerLevelOffset]);
     });
 
     it('should handle positive tx power level', function () {
-        var advertisementData = EddystoneBeacon.makeBuffer("http://www.eff.org", 18);
+        var advertisementData = EddystoneBeacon.makeUrlBuffer("http://www.eff.org", 18);
         assert.deepEqual(0x12, advertisementData[txPowerLevelOffset]);
     });
 
     it('should ignore tx power level that is too high', function () {
-        var advertisementData = EddystoneBeacon.makeBuffer("http://www.eff.org", 21);
+        var advertisementData = EddystoneBeacon.makeUrlBuffer("http://www.eff.org", 21);
         assert.deepEqual(defaultTxPowerLevel, advertisementData[txPowerLevelOffset]);
     });
 
     it('should ignore power level that is too low', function () {
-        var advertisementData = EddystoneBeacon.makeBuffer("http://www.eff.org", -101);
+        var advertisementData = EddystoneBeacon.makeUrlBuffer("http://www.eff.org", -101);
         assert.deepEqual(defaultTxPowerLevel, advertisementData[txPowerLevelOffset]);
     });
 

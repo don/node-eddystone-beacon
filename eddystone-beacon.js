@@ -1,9 +1,9 @@
-var uriEncoder = require('./lib/uriEncoder');
+var urlEncoder = require('./lib/urlEncoder');
 var advertisement = require('./lib/advertisement');
 var beacon = require('./lib/beacon');
 
 module.exports = {
-    encode: uriEncoder.encode,
-    makeBuffer: advertisement.makeBuffer,
-    advertise: beacon.advertise
+    encodeUrl: urlEncoder.encode,
+    makeUrlBuffer: advertisement.makeUrlBuffer,
+    advertiseUrl: beacon.advertiseUrl
 };

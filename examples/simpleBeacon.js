@@ -1,5 +1,5 @@
-// Simplest way to create a Eddystone Beacon
+// Simplest way to create a Eddystone-URL Beacon
 
 var EddystoneBeacon = require('./../eddystone-beacon');
 
-EddystoneBeacon.advertise("http://www.chariotsolutions.com");
+EddystoneBeacon.advertiseUrl("http://www.google.com");

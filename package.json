@@ -36,8 +36,7 @@
   ],
   "license": "Apache Version 2.0",
   "dependencies": {
-    "bleno": "~0.1.13",
-    "node-uuid": "~1.4.2"
+    "bleno": "~0.1.13"
   },
   "devDependencies": {
       "jshint": "~2.5.6",
