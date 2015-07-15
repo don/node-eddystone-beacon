@@ -1,5 +1,5 @@
-// Simplest way to create a URI Beacon
+// Simplest way to create a Eddystone Beacon
 
-var uriBeacon = require('./../uri-beacon');
+var EddystoneBeacon = require('./../eddystone-beacon');
 
-uriBeacon.advertise("http://www.chariotsolutions.com");
+EddystoneBeacon.advertise("http://www.chariotsolutions.com");
