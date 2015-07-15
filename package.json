@@ -34,7 +34,7 @@
       "email": "sandeep.mistry@gmail.com"
     }
   ],
-  "license": "Apache Version 2.0",
+  "license": "Apache-2.0",
   "dependencies": {
     "bleno": "~0.1.13"
   },
