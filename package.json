@@ -1,7 +1,7 @@
 {
   "name": "eddystone-beacon",
   "version": "0.1.0",
-  "description": "Bluetooth LE Eddystone Beacon",
+  "description": "Create an Eddystone Beacon using Node.js",
   "os": [
     "darwin",
     "linux"

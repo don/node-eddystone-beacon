@@ -1,4 +1,4 @@
-# Bluetooth LE [Eddystone](https://github.com/google/eddystone) Beacon
+# Create an [Eddystone](https://github.com/google/eddystone) Beacon using Node.js
 
 Eddystone-URL beacons can be used with the [Physical Web](http://google.github.io/physical-web/).
 
@@ -22,7 +22,7 @@ npm install eddystone-beacon
 var EddystoneBeacon = require('eddystone-beacon');
 ```
 
-### URL
+### [Eddystone-URL](https://github.com/google/eddystone/tree/master/eddystone-url)
 
 Advertise URL with default TX power level (-21 dBm)
 
@@ -60,4 +60,4 @@ npm test
 
 ## TODO
 
- * Support or Eddystone-UID and Eddystone-TLM beacons
+ * Support for [Eddystone-UID](https://github.com/google/eddystone/tree/master/eddystone-uid) and [Eddystone-TLM](https://github.com/google/eddystone/tree/master/eddystone-tlm) beacons
