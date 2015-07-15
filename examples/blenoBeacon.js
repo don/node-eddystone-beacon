@@ -1,8 +1,6 @@
 // Manually create a URI Beacon with bleno
-
 var bleno = require('bleno');
 
-var scanData = new Buffer(0); // maximum 31 bytes
 var advertisementData = new Buffer(15); // maximum 31 bytes
 
 advertisementData[0] = 0x03; // Length
@@ -21,4 +19,12 @@ advertisementData[12] = 0x62; // b
 advertisementData[13] = 0x63; // c
 advertisementData[14] = 0x07; // .com
 
-bleno.startAdvertisingWithEIRData(advertisementData, scanData);
+bleno.on('stateChange', function(state) {
+    if (state === 'poweredOn') {
+        if (bleno.startAdvertisingWithEIRData) {
+            bleno.startAdvertisingWithEIRData(advertisementData);
+        } else {
+            throw new Error('Your platform is not supported!');
+        }
+    }
+});

@@ -16,9 +16,16 @@ template[7] = 0xFE; // URI Beacon ID
 template[8] = 0x00; // Flags
 template[9] = 0xEC; // Power -20 dBm
 
-var scanData = new Buffer(0); // maximum 31 bytes
 var encoded = uriBeacon.encode("http://example.com");
 var advertisementData = Buffer.concat([template, encoded], template.length + encoded.length);
 advertisementData[4] = encoded.length + 5;
 
-bleno.startAdvertisingWithEIRData(advertisementData, scanData);
+bleno.on('stateChange', function(state) {
+    if (state === 'poweredOn') {
+        if (bleno.startAdvertisingWithEIRData) {
+            bleno.startAdvertisingWithEIRData(advertisementData);
+        } else {
+            throw new Error('Your platform is not supported!');
+        }
+    }
+});

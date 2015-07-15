@@ -3,6 +3,7 @@
   "version": "0.2.3",
   "description": "Bluetooth URI Beacon",
   "os": [
+    "darwin",
     "linux"
   ],
   "keywords": [
@@ -23,7 +24,7 @@
   "author": "Don Coleman <don.coleman@gmail.com>",
   "license": "Apache Version 2.0",
   "dependencies": {
-    "bleno": "~0.1.8",
+    "bleno": "~0.1.13",
     "node-uuid": "~1.4.2"
   },
   "devDependencies": {
