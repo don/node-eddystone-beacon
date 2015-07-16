@@ -1,7 +1,7 @@
 // use this library to encode the URL
 // manually create the advertising data
 
-var EddystoneBeacon = require('../../eddystone-beacon'),
+var EddystoneBeacon = require('./../../eddystone-beacon'),
     bleno = require('bleno');
 
 var template = new Buffer(13); // maximum 31 bytes
