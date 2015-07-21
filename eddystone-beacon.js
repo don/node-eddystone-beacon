@@ -1,4 +1,4 @@
-var urlEncoder = require('./lib/urlEncoder');
+var urlEncoder = require('eddystone-url-encoding');
 var advertisement = require('./lib/advertisement');
 var beacon = require('./lib/beacon');
 
