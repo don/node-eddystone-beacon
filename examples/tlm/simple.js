@@ -2,4 +2,4 @@
 
 var eddystoneBeacon = require('./../../index');
 
-eddystoneBeacon.advertiseTlm(500, -128, 100, 200);
+eddystoneBeacon.advertiseTlm();
