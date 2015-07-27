@@ -21,30 +21,42 @@ npm install eddystone-beacon
 ## Usage
 
 ```javascript
-var EddystoneBeacon = require('eddystone-beacon');
+var eddystoneBeacon = require('eddystone-beacon');
+
+```
+
+### Options
+
+```javascript
+var options = {
+  txPowerLevel: -22; // override TX Power Level, default value is -21
+};
 ```
 
 ### [Eddystone-URL](https://github.com/google/eddystone/tree/master/eddystone-url)
 
-#### Advertise URL with default TX power level (-21 dBm)
-
 ```javascript
-EddystoneBeacon.advertiseUrl('http://example.com');
+var url = 'http://example.com';
+
+eddystoneBeacon.advertiseUrl(url, [options]);
 ```
 
-#### Advertise URL with custom TX power level
+### [Eddystone-UID](https://github.com/google/eddystone/tree/master/eddystone-uid)
 
 ```javascript
-EddystoneBeacon.advertiseUrl('http://example.com', { txPowerLevel: -22 });
+var namespaceId = '00010203040506070809';
+var instanceId = 'aabbccddeeff';
+
+eddystoneBeacon.advertiseUid(namespaceId, instanceId, [options]);
 ```
 
 ### Examples
 
  * [Eddystone-URL](https://github.com/google/eddystone/tree/master/eddystone-url)
-   * [simpleBeacon](examples/url/simpleBeacon.js) - easiest way to create a Eddystone-URL Beacon
-   * [powerLevel](examples/url/powerLevel.js) - create a Eddystone-URL Beacon specifying txPowerLevel
-   * [blenoBeacon](examples/url/blenoBeacon.js) - manually create a Eddystone-URL Beacon using [bleno](https://github.com/sandeepmistry/bleno)
-   * [flexibleBeacon](examples/url/flexibleBeacon.js) - use library to encode URL, manually handle advertising data
+   * [simple](examples/url/simple.js) - easiest way to create a Eddystone-URL Beacon
+   * [power-level](examples/url/power-level.js) - create a Eddystone-URL Beacon specifying txPowerLevel
+ * [Eddystone-URL](https://github.com/google/eddystone/tree/master/eddystone-url)
+  * [simple](examples/url/simple.js) - easiest way to create a Eddystone-UID Beacon
 
 ## Development
 
@@ -59,7 +71,3 @@ npm install
 ```sh
 npm test
 ```
-
-## TODO
-
- * Support for [Eddystone-UID](https://github.com/google/eddystone/tree/master/eddystone-uid) and [Eddystone-TLM](https://github.com/google/eddystone/tree/master/eddystone-tlm) beacons
