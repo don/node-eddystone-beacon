@@ -1,1 +1,3 @@
-module.exports = require('./lib/beacon');
+var Beacon = require('./lib/beacon');
+
+module.exports = new Beacon();

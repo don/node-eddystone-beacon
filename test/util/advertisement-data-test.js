@@ -1,5 +1,5 @@
 var assert = require('assert');
-var AdvertisementData = require('./../lib/advertisement-data');
+var AdvertisementData = require('./../../lib/util/advertisement-data');
 
 var defaultTxPowerLevel = 0xEB; // -21dBm
 var txPowerLevelOffset = 12;
@@ -19,31 +19,14 @@ describe('Advertisement Data', function () {
             knownData.writeUInt8(0x00, 29);
             knownData.writeUInt8(0x00, 30);
 
-            var advertisementData = AdvertisementData.makeUidBuffer('00010203040506070809', '0a0b0c0d0e0f');
-            assert.deepEqual(advertisementData, knownData);
-        });
-
-        it('should allow tx power level to be set', function () {
-            var knownData = new Buffer(31);
-
-            setupPrefix(22, 0x00, knownData);
-            setupPowerLevel(-100, knownData);
-
-            for (var i = 0; i < 16; i++) {
-                 knownData.writeUInt8(i, 13 +i);
-            }
-
-            knownData.writeUInt8(0x00, 29);
-            knownData.writeUInt8(0x00, 30);
-
-            var advertisementData = AdvertisementData.makeUidBuffer('00010203040506070809', '0a0b0c0d0e0f', -100);
+            var advertisementData = AdvertisementData.makeUidBuffer('00010203040506070809', '0a0b0c0d0e0f', -21);
             assert.deepEqual(advertisementData, knownData);
         });
 
         it('should throw error for invalid namespace id', function() {
             assert.throws(
                 function() {
-                    var advertisementData = AdvertisementData.makeUidBuffer('000102030405060708', '0a0b0c0d0e0f');
+                    var advertisementData = AdvertisementData.makeUidBuffer('000102030405060708', '0a0b0c0d0e0f', -21);
                 },
                 /Invalid namespace id/
             );
@@ -52,7 +35,7 @@ describe('Advertisement Data', function () {
         it('should throw error for invalid instance id', function() {
             assert.throws(
                 function() {
-                    var advertisementData = AdvertisementData.makeUidBuffer('00010203040506070809', '0a0b0c0d0e');
+                    var advertisementData = AdvertisementData.makeUidBuffer('00010203040506070809', '0a0b0c0d0e', -21);
                 },
                 /Invalid instance id/
             );
@@ -71,7 +54,7 @@ describe('Advertisement Data', function () {
             knownData.writeUInt8(0x00, 29);
             knownData.writeUInt8(0x00, 30);
 
-            var advertisementData = AdvertisementData.makeUidBuffer('00010203-0405-0607-0809', '0a0b0c0d0e0f');
+            var advertisementData = AdvertisementData.makeUidBuffer('00010203-0405-0607-0809', '0a0b0c0d0e0f', -21);
             assert.deepEqual(advertisementData, knownData);
         });
     });
@@ -87,57 +70,17 @@ describe('Advertisement Data', function () {
             knownData.write('abc', 14);
             knownData.writeUInt8(0x07, 17); // .com
 
-            var advertisementData = AdvertisementData.makeUrlBuffer('http://www.abc.com');
-            assert.deepEqual(advertisementData, knownData);
-        });
-
-        it('should allow tx power level to be set', function () {
-            var knownData = new Buffer(18);
-
-            setupPrefix(9, 0x10, knownData);
-            setupPowerLevel(-100, knownData);
-
-
-            knownData.writeUInt8(0x00, 13); // http://www.
-            knownData.write('eff', 14);
-            knownData.writeUInt8(0x08, 17); // .org
-
-            var advertisementData = AdvertisementData.makeUrlBuffer('http://www.eff.org', -100);
+            var advertisementData = AdvertisementData.makeUrlBuffer('http://www.abc.com', -21);
             assert.deepEqual(advertisementData, knownData);
         });
 
         it('should throw error for URLs that a to long', function() {
             assert.throws(
                 function() {
-                    var advertisementData = AdvertisementData.makeUrlBuffer('http://www.blahblahblahblahblahblahblahblah.org');
+                    var advertisementData = AdvertisementData.makeUrlBuffer('http://www.blahblahblahblahblahblahblahblah.org', -21);
                 },
                 /is too long/
             );
-        });
-
-        it('should handle missing tx power level', function () {
-            var advertisementData = AdvertisementData.makeUrlBuffer('http://www.eff.org');
-            assert.deepEqual(advertisementData[txPowerLevelOffset], defaultTxPowerLevel);
-        });
-
-        it('should handle negative tx power level', function () {
-            var advertisementData = AdvertisementData.makeUrlBuffer('http://www.eff.org', -18);
-            assert.deepEqual(advertisementData[txPowerLevelOffset], 0xEE);
-        });
-
-        it('should handle positive tx power level', function () {
-            var advertisementData = AdvertisementData.makeUrlBuffer('http://www.eff.org', 18);
-            assert.deepEqual(advertisementData[txPowerLevelOffset], 0x12);
-        });
-
-        it('should ignore tx power level that is too high', function () {
-            var advertisementData = AdvertisementData.makeUrlBuffer('http://www.eff.org', 21);
-            assert.deepEqual(advertisementData[txPowerLevelOffset], defaultTxPowerLevel);
-        });
-
-        it('should ignore power level that is too low', function () {
-            var advertisementData = AdvertisementData.makeUrlBuffer('http://www.eff.org', -101);
-            assert.deepEqual(advertisementData[txPowerLevelOffset], defaultTxPowerLevel);
         });
     });
 
