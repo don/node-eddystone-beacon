@@ -71,7 +71,7 @@ eddystoneBeacon.setBatteryVoltage(batteryVoltage);
 ```javascript
 var temperature = 22.0; // between -128.0 and 128.0
 
-eddystoneBeacon.setTemperature(randomTemperature);
+eddystoneBeacon.setTemperature(temperature);
 ```
 
 ### Examples
