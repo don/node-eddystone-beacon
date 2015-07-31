@@ -79,7 +79,7 @@ eddystoneBeacon.setTemperature(temperature);
  * [Eddystone-URL](https://github.com/google/eddystone/tree/master/eddystone-url)
    * [simple](examples/url/simple.js) - easiest way to create a Eddystone-URL Beacon
    * [power-level](examples/url/power-level.js) - create a Eddystone-URL Beacon specifying txPowerLevel
- * [Eddystone-URL](https://github.com/google/eddystone/tree/master/eddystone-url)
+ * [Eddystone-UID](https://github.com/google/eddystone/tree/master/eddystone-uid)
   * [simple](examples/uid/simple.js) - easiest way to create a Eddystone-UID Beacon
   * [with-tlm](examples/uid/with-tlm.js) - create a Eddystone-UID Beacon with interleaved TLM data
 
