@@ -6,11 +6,21 @@ Create an [Eddystone](https://github.com/google/eddystone) Beacon using Node.js
 
 ## Prerequisites
 
-Requires Node.js and Linux or OS X 10.10 or above with Bluetooth 4.0 hardware.
+See [bleno prerequisites](https://github.com/sandeepmistry/bleno#prerequisites).
 
-On Linux, you __need__ to run with ```sudo``` or as ```root```. See [bleno](https://github.com/sandeepmistry/bleno#running-on-linux) for more info.
+### OS X
+
+OS X 10.10 or above, with Bluetooth 4.0 Hardware.
+
+### Linux
+
+You __need__ to run with ```sudo``` or as ```root```. See [bleno - Running on Linux](https://github.com/sandeepmistry/bleno#running-on-linux) for more info.
 
 Have an older machine or Raspberry Pi? Add a [Bluetooth 4.0 USB Adapter](http://www.adafruit.com/products/1327).
+
+### Windows
+
+See [bleno Windows prerequisites](https://github.com/sandeepmistry/bleno#windows).
 
 ## Install
 
