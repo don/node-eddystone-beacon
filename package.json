@@ -4,7 +4,8 @@
   "description": "Create an Eddystone Beacon using Node.js",
   "os": [
     "darwin",
-    "linux"
+    "linux",
+    "win32"
   ],
   "keywords": [
     "bluetooth",
