@@ -16,12 +16,12 @@
   ],
   "repository": {
     "type": "git",
-     "url": "https://github.com/don/node-eddystone-beacon.git"
+    "url": "https://github.com/don/node-eddystone-beacon.git"
   },
   "main": "index.js",
   "scripts": {
     "pretest": "jshint *.js lib/. test/. examples/.",
-     "test": "mocha -R spec --recursive test/"
+    "test": "mocha -R spec --recursive test/"
   },
   "author": "Don Coleman <don.coleman@gmail.com>",
   "maintainers": [
@@ -40,7 +40,7 @@
     "eddystone-url-encoding": "^1.0.0"
   },
   "devDependencies": {
-      "jshint": "~2.5.6",
-      "mocha": "~1.21.4"
+    "jshint": "~2.5.6",
+    "mocha": "~1.21.4"
   }
 }
