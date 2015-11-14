@@ -1,6 +1,6 @@
 {
   "name": "eddystone-beacon",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Create an Eddystone Beacon using Node.js",
   "os": [
     "darwin",
