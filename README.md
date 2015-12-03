@@ -39,7 +39,8 @@ var eddystoneBeacon = require('eddystone-beacon');
 
 ```javascript
 var options = {
-  txPowerLevel: -22,  // override TX Power Level, default value is -21,
+  name: 'Beacon',    // set device name when advertising
+  txPowerLevel: -22, // override TX Power Level, default value is -21,
   tlmCount: 2,       // 2 TLM frames
   tlmPeriod: 10      // every 10 advertisements
 };
@@ -89,9 +90,11 @@ eddystoneBeacon.setTemperature(temperature);
  * [Eddystone-URL](https://github.com/google/eddystone/tree/master/eddystone-url)
    * [simple](examples/url/simple.js) - easiest way to create a Eddystone-URL Beacon
    * [power-level](examples/url/power-level.js) - create a Eddystone-URL Beacon specifying txPowerLevel
+   * [name](examples/url/name.js) - create a Eddystone-URL Beacon specifying device name
  * [Eddystone-UID](https://github.com/google/eddystone/tree/master/eddystone-uid)
-  * [simple](examples/uid/simple.js) - easiest way to create a Eddystone-UID Beacon
-  * [with-tlm](examples/uid/with-tlm.js) - create a Eddystone-UID Beacon with interleaved TLM data
+   * [simple](examples/uid/simple.js) - easiest way to create a Eddystone-UID Beacon
+   * [with-tlm](examples/uid/with-tlm.js) - create a Eddystone-UID Beacon with interleaved TLM data
+   * [name](examples/uid/name.js) - create a Eddystone-UID Beacon specifying device name
 
 ## Development
 
