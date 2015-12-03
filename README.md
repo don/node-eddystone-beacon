@@ -98,7 +98,7 @@ eddystoneBeacon.setTemperature(temperature);
    * [with-tlm](examples/uid/with-tlm.js) - create a Eddystone-UID Beacon with interleaved TLM data
    * [name](examples/uid/name.js) - create a Eddystone-UID Beacon specifying device name
  * [Eddystone-TLM](https://github.com/google/eddystone/tree/master/eddystone-tlm)
-   * [simple](examples/tml/simple.js) - example with random data in TLM
+   * [simple](examples/tlm/simple.js) - example with random data in TLM
  * [Connectable](https://github.com/google/eddystone/tree/master/connectable)
    * [connectable](examples/connectable/connectable.js) - beacon using eddystone with [bleno](https://github.com/sandeepmistry/bleno)
    
