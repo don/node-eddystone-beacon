@@ -39,7 +39,7 @@ var eddystoneBeacon = require('eddystone-beacon');
 
 ```javascript
 var options = {
-  name: 'Beacon',    // set device name when advertising
+  name: 'Beacon',    // set device name when advertising (Linux only)
   txPowerLevel: -22, // override TX Power Level, default value is -21,
   tlmCount: 2,       // 2 TLM frames
   tlmPeriod: 10      // every 10 advertisements
@@ -95,7 +95,11 @@ eddystoneBeacon.setTemperature(temperature);
    * [simple](examples/uid/simple.js) - easiest way to create a Eddystone-UID Beacon
    * [with-tlm](examples/uid/with-tlm.js) - create a Eddystone-UID Beacon with interleaved TLM data
    * [name](examples/uid/name.js) - create a Eddystone-UID Beacon specifying device name
-
+ * [Eddystone-TLM](https://github.com/google/eddystone/tree/master/eddystone-tlm)
+   * [simple](examples/tml/simple.js) simple example with random data in TLM
+ * [Connectable](https://github.com/google/eddystone/tree/master/connectable)
+   * [connectable](examples/connectable/connectable.js) connectable beacon using [bleno](https://github.com/sandeepmistry/bleno)
+   
 ## Development
 
 ### Install the dependencies
