@@ -16,14 +16,14 @@ var service = new bleno.PrimaryService({
   characteristics: [
     characteristic
   ]
-})
+});
 
 bleno.once('advertisingStart', function(err) {
   if (err) {
     throw err;
   }
 
-  console.log('on -> advertisingStart')
+  console.log('on -> advertisingStart');
   bleno.setServices([
     service
   ]);
