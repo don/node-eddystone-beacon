@@ -56,6 +56,8 @@ var url = 'http://example.com';
 eddystoneBeacon.advertiseUrl(url, [options]);
 ```
 
+If your encoded URL is too long, try a URL shortener like [goo.gl](https://goo.gl) or [bit.ly](https://bit.ly).
+
 ### [Eddystone-UID](https://github.com/google/eddystone/tree/master/eddystone-uid)
 
 ```javascript
