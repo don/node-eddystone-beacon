@@ -1,0 +1,5 @@
+= 1.0.5 =
+
+Add name to scan data (Linux only) #33 Thanks Francois Beaufort
+Add connectable example using eddystone-beacon and bleno #30 #31
+Documentation

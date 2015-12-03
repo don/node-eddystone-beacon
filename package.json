@@ -1,6 +1,6 @@
 {
   "name": "eddystone-beacon",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Create an Eddystone Beacon using Node.js",
   "os": [
     "darwin",
@@ -38,7 +38,7 @@
   "license": "Apache-2.0",
   "dependencies": {
     "bleno": "^0.3.2",
-    "eddystone-url-encoding": "^1.0.0"
+    "eddystone-url-encoding": "^1.0.1"
   },
   "devDependencies": {
     "jshint": "~2.5.6",
