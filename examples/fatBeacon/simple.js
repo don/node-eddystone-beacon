@@ -1,20 +1,12 @@
-// Simplest way to create a Eddystone-URL Beacon
+// Simplest way to create a Eddystone-FatBeacon
+
+// might want to include something like this https://www.npmjs.com/package/html-minify
 
 var eddystoneBeacon = require('./../../index');
+var fs = require('fs');
 
-var html = "<html>" + 
-      "<head>" +
-        "<title>Fat Beacon Demo</title>" +
-        "<meta charset='UTF-8'>" + 
-        "<meta name='description' content='Fat Beacon Demo'/>" + 
-       "</head>" + 
-       "<body>" +
-        "<h1>HelloWorld</h1>" +
-        "This is a test" + 
-        "<div>Adding more content to see if I can it over the MTU value</div>" + 
-        "<div>Adding more content to see if I can it over the MTU value</div>" + 
-        "<div>Adding more content to see if I can it over the MTU value</div>" + 
-       "</body>" + 
-      "</html>";
-
-eddystoneBeacon.advertiseFatBeacon('Fat Beacon Demo', {html: html});
+fs.readFile('index.html', function(err, data){
+  if (!err) {
+    eddystoneBeacon.advertiseFatBeacon('Fat Beacon Demo', {html: data});
+  }
+});
