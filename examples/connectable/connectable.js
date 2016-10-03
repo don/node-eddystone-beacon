@@ -29,4 +29,4 @@ bleno.once('advertisingStart', function(err) {
   ]);
 });
 
-eddystoneBeacon.advertiseUrl('http://www.example.com');
+eddystoneBeacon.advertiseUrl('https://www.example.com');
