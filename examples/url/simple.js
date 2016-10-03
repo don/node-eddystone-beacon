@@ -2,4 +2,4 @@
 
 var eddystoneBeacon = require('./../../index');
 
-eddystoneBeacon.advertiseUrl('http://www.google.com');
+eddystoneBeacon.advertiseUrl('https://www.google.com');
