@@ -1,3 +1,3 @@
 var eddystoneBeacon = require('./../../index');
 
-eddystoneBeacon.advertiseUrl('http://www.eff.org', { name: 'Beacon' });
+eddystoneBeacon.advertiseUrl('https://www.eff.org', { name: 'Beacon' });
